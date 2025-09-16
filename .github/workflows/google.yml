@@ -82,13 +82,17 @@ jobs:
 
       # Get the GKE credentials so we can deploy to the cluster
       - name: 'Set up GKE credentials'
+
+
+
+    master semie
         uses: 'google-github-actions/get-gke-credentials@6051de21ad50fbb1767bc93c11357a49082ad116' # google-github-actions/get-gke-credentials@v2
         with:
           cluster_name: '${{ env.GKE_CLUSTER }}'
           location: '${{ env.GKE_ZONE }}'
 
       # Build the Docker image
-      - name: 'Build and push Docker container'
+      - name: 'Tha hacker'
         run: |-
           DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${GITHUB_SHA}"
 
@@ -101,7 +105,7 @@ jobs:
           docker push "${DOCKER_TAG}"
 
       # Set up kustomize
-      - name: 'Set up Kustomize'
+      - name: 'Semie veer'
         run: |-
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.4.3_linux_amd64.tar.gz
           chmod u+x ./kustomize
